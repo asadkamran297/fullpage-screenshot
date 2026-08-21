@@ -10,6 +10,7 @@ import {
 // captureVisibleTab is throttled by Chrome (MAX_CAPTURE_VISIBLE_TAB_CALLS_PER_SECOND).
 const CAPTURE_INTERVAL_MS = 550;
 const SETTLE_MS = 150;
+const OVERLAY_HIDE_MS = 40;
 const BLOCKED_SCHEMES = ["chrome:", "chrome-extension:", "edge:", "about:", "devtools:"];
 
 let busy = false;
@@ -70,6 +71,7 @@ async function captureTiles(tabId, windowId, m) {
       // The overlay is on-screen furniture, so it must be gone for the split
       // second the tab is actually photographed.
       await setOverlay(tabId, { visible: false });
+      await sleep(OVERLAY_HIDE_MS);
       const dataUrl = await capture(windowId);
       shots.push({ dataUrl, x: at.x, y: at.y });
 

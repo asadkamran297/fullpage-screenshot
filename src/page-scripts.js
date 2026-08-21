@@ -148,12 +148,9 @@ export function mountOverlay() {
 
 export function updateOverlay(state) {
   const host = document.getElementById("__fps_overlay__");
-  if (!host || !host.shadowRoot) return;
+  if (!host || !host.shadowRoot) return false;
   const root = host.shadowRoot;
 
-  if (typeof state.visible === "boolean") {
-    host.style.display = state.visible ? "block" : "none";
-  }
   if (typeof state.percent === "number") {
     root.querySelector(".pct").textContent = `${state.percent}%`;
     root.querySelector(".fill").style.width = `${state.percent}%`;
@@ -164,6 +161,20 @@ export function updateOverlay(state) {
   if (state.done) {
     root.querySelector(".ring").classList.add("done");
   }
+  if (typeof state.visible !== "boolean") return true;
+
+  host.style.display = state.visible ? "block" : "none";
+
+  // Setting display is not enough: the compositor has not repainted yet, and
+  // captureVisibleTab photographs the composited frame. Hand back a promise
+  // that settles only after a frame has actually been painted without the
+  // overlay, otherwise it shows up in the screenshot. chrome.scripting awaits
+  // a returned promise, so the caller blocks until then.
+  return new Promise((resolve) => {
+    requestAnimationFrame(() => requestAnimationFrame(() => resolve(true)));
+    // rAF is throttled or skipped in some states, so never hang the capture.
+    setTimeout(() => resolve(true), 250);
+  });
 }
 
 export function unmountOverlay() {
