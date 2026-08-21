@@ -12,6 +12,7 @@ const els = {
   shot: document.getElementById("shot"),
   copy: document.getElementById("copy"),
   download: document.getElementById("download"),
+  autocopy: document.getElementById("autocopy"),
   menu: document.getElementById("menu"),
   toast: document.getElementById("toast")
 };
@@ -44,6 +45,13 @@ async function init() {
 
   sourceBlob = dataUrlToBlob(shot.dataUrl);
 
+  const { autoCopy = true } = await chrome.storage.sync.get("autoCopy");
+  els.autocopy.checked = autoCopy;
+  els.autocopy.addEventListener("change", () => {
+    chrome.storage.sync.set({ autoCopy: els.autocopy.checked });
+    toast(els.autocopy.checked ? "New screenshots will be copied automatically" : "Auto-copy turned off");
+  });
+
   els.download.addEventListener("click", () => saveAs("png"));
   els.copy.addEventListener("click", copyImage);
   els.shot.addEventListener("contextmenu", onContextMenu);
@@ -52,6 +60,28 @@ async function init() {
   window.addEventListener("blur", closeMenu);
   window.addEventListener("resize", closeMenu);
   document.addEventListener("keydown", onKeyDown);
+
+  if (autoCopy) autoCopyImage();
+}
+
+// The clipboard rejects writes from an unfocused document. This tab was just
+// opened so it normally has focus already, but if Chrome handed focus
+// elsewhere, wait for it rather than failing.
+async function autoCopyImage() {
+  if (!document.hasFocus()) {
+    const focused = await Promise.race([
+      new Promise((resolve) => window.addEventListener("focus", () => resolve(true), { once: true })),
+      new Promise((resolve) => setTimeout(() => resolve(false), 3000))
+    ]);
+    if (!focused) return toast("Click the page, then press Copy to put it on the clipboard");
+  }
+
+  try {
+    await navigator.clipboard.write([new ClipboardItem({ "image/png": sourceBlob })]);
+    toast("Screenshot copied to clipboard");
+  } catch {
+    toast("Press Copy to put the screenshot on the clipboard");
+  }
 }
 
 /* --------------------------------------------------------------- formats */

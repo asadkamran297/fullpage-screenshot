@@ -20,7 +20,8 @@ Nothing. The extension makes no network requests, contains no analytics, no trac
 
 - `activeTab` — read the current tab's pixels after you click the icon
 - `scripting` — inject the measuring and scrolling helpers into that tab
-- `storage` / `unlimitedStorage` — temporarily hold the screenshot for the viewer tab
+- `storage` / `unlimitedStorage` — temporarily hold the screenshot for the viewer tab and remember the auto-copy setting
+- `clipboardWrite` — place the finished screenshot on your clipboard
 
 ## Contact
 

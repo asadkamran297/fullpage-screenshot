@@ -178,3 +178,18 @@ button.primary {
   #stage { padding: 0; }
   #shot { border: 0; box-shadow: none; border-radius: 0; }
 }
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 13px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle:hover { color: var(--text); }
+.toggle input { accent-color: var(--accent); cursor: pointer; margin: 0; }

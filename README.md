@@ -13,7 +13,7 @@ The icon is a camera with a down arrow in the lens — camera for screenshot, ar
 - Hides repeated `position: fixed` / `sticky` headers so they appear only once
 - Freezes animations and transitions during capture for clean seams
 - On-page progress overlay with a spinner, percentage and progress bar, hidden for the instant each tile is photographed so it never lands in the image
-- Result opens in a new tab with **Copy to clipboard** and **Download PNG**
+- Result opens in a new tab and is **copied to the clipboard automatically** — paste it straight into chat, docs or an editor (toggle it off in the viewer's toolbar)
 - Right-click the image for a menu that saves it as **PNG, JPG, JPEG, WebP, WebP lossless or PDF**, copies the image or its data URL, opens it in a new tab, or prints it (hold Shift to get Chrome's own menu)
 - Multi-page PDF export written from scratch — no third-party library, so it passes the Web Store's no-remote-code rule
 - Restores your original scroll position when it's done
@@ -46,7 +46,8 @@ Chrome throttles `captureVisibleTab`, so tiles are captured roughly every 550 ms
 |------------|------------------|
 | `activeTab` | Read pixels of the tab you explicitly click the button on |
 | `scripting` | Inject the measure/scroll helpers into that tab |
-| `storage` + `unlimitedStorage` | Hand the finished PNG to the viewer tab (deleted right after it loads) |
+| `storage` + `unlimitedStorage` | Hand the finished PNG to the viewer tab (deleted right after it loads) and remember the auto-copy setting |
+| `clipboardWrite` | Copy the finished screenshot to the clipboard without needing a click first |
 
 There is no `host_permissions` entry — the extension has zero access to any page until you click its icon.
 

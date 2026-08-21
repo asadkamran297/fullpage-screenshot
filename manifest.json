@@ -1,10 +1,10 @@
 {
   "manifest_version": 3,
   "name": "Full Page Screenshot",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Capture the entire scrollable page as one image and open it in a new tab, ready to save or copy.",
   "minimum_chrome_version": "109",
-  "permissions": ["activeTab", "scripting", "storage", "unlimitedStorage"],
+  "permissions": ["activeTab", "scripting", "storage", "unlimitedStorage", "clipboardWrite"],
   "background": {
     "service_worker": "src/background.js",
     "type": "module"

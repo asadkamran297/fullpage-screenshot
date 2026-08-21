@@ -16,6 +16,7 @@ WHAT IT DOES
 • Renders at your display's pixel density, so text stays crisp on HiDPI screens
 • Hides sticky headers and floating banners after the first section, so they don't repeat down the image
 • Pauses animations and transitions while capturing for clean, seamless joins
+• Copies the finished screenshot to your clipboard automatically, so you can paste it right away
 • Right-click the result to save it as PNG, JPG, JPEG, WebP or a multi-page PDF, copy it, or print it
 • Restores your original scroll position when it finishes
 • Shows live progress on the page itself and on the toolbar badge, so you always know it is working
@@ -35,7 +36,8 @@ Productivity / Workflow & Planning
 - Single purpose: Capture a screenshot of the entire scrollable area of the user's current page and present it for saving.
 - activeTab: Needed to read the pixels of the tab the user explicitly invokes the extension on.
 - scripting: Needed to inject the helpers that measure page dimensions and scroll the page during capture.
-- storage / unlimitedStorage: Needed to pass the generated image to the viewer tab; the entry is deleted as soon as the viewer loads it.
+- storage / unlimitedStorage: Needed to pass the generated image to the viewer tab; the entry is deleted as soon as the viewer loads it. Also stores the auto-copy preference.
+- clipboardWrite: Needed to place the finished screenshot on the clipboard automatically when the viewer opens.
 - Remote code: No remote code is used.
 - Data collection: No user data is collected or transmitted.
 

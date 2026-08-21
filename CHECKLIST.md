@@ -4,7 +4,7 @@ Tracking what still stands between this repo and a live Chrome Web Store listing
 
 ## Status
 
-Version **1.2.0** — code complete, not yet verified in a real browser.
+Version **1.3.0** — code complete, not yet verified in a real browser.
 
 ## Before publishing
 
