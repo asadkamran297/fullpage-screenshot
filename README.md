@@ -10,6 +10,7 @@ A Chrome extension (Manifest V3) that captures the **entire scrollable page** â€
 - Automatic scroll-and-stitch with device-pixel-ratio aware rendering
 - Hides repeated `position: fixed` / `sticky` headers so they appear only once
 - Freezes animations and transitions during capture for clean seams
+- On-page progress overlay with a spinner, percentage and progress bar, hidden for the instant each tile is photographed so it never lands in the image
 - Result opens in a new tab with **Copy to clipboard** and **Download PNG**
 - Restores your original scroll position when it's done
 - No servers, no analytics, no network requests â€” everything stays on your machine

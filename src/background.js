@@ -1,4 +1,11 @@
-import { preparePage, scrollTo, restorePage } from "./page-scripts.js";
+import {
+  preparePage,
+  scrollTo,
+  restorePage,
+  mountOverlay,
+  updateOverlay,
+  unmountOverlay
+} from "./page-scripts.js";
 
 // captureVisibleTab is throttled by Chrome (MAX_CAPTURE_VISIBLE_TAB_CALLS_PER_SECOND).
 const CAPTURE_INTERVAL_MS = 550;
@@ -26,12 +33,16 @@ async function run(tab) {
   }
 
   const metrics = await runInPage(tab.id, preparePage);
+  await runInPage(tab.id, mountOverlay).catch(() => {});
   try {
     const shots = await captureTiles(tab.id, tab.windowId, metrics);
+    await setOverlay(tab.id, { percent: 100, label: "Stitching image…" });
     const dataUrl = await stitch(shots, metrics);
+    await setOverlay(tab.id, { done: true, label: "Opening screenshot…" });
     await openViewer(dataUrl, tab, metrics);
   } finally {
     await runInPage(tab.id, restorePage, [metrics]).catch(() => {});
+    await runInPage(tab.id, unmountOverlay).catch(() => {});
   }
 }
 
@@ -55,14 +66,25 @@ async function captureTiles(tabId, windowId, m) {
       };
       const at = await runInPage(tabId, scrollTo, [target]);
       await sleep(SETTLE_MS);
+
+      // The overlay is on-screen furniture, so it must be gone for the split
+      // second the tab is actually photographed.
+      await setOverlay(tabId, { visible: false });
       const dataUrl = await capture(windowId);
       shots.push({ dataUrl, x: at.x, y: at.y });
+
       done++;
-      setBadge(tabId, `${Math.round((done / total) * 100)}`);
+      const percent = Math.round((done / total) * 100);
+      await setOverlay(tabId, { visible: true, percent });
+      setBadge(tabId, `${percent}`);
       if (done < total) await sleep(CAPTURE_INTERVAL_MS);
     }
   }
   return shots;
+}
+
+function setOverlay(tabId, state) {
+  return runInPage(tabId, updateOverlay, [state]).catch(() => {});
 }
 
 async function capture(windowId, attempt = 0) {

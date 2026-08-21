@@ -22,7 +22,7 @@ export function preparePage() {
     const style = document.createElement("style");
     style.id = STYLE_ID;
     style.textContent = `
-      html.__fps_capturing__ * { animation: none !important; transition: none !important; }
+      html.__fps_capturing__ body * { animation: none !important; transition: none !important; }
       html.__fps_capturing__ ::-webkit-scrollbar { display: none !important; }
       .__fps_hidden__ { visibility: hidden !important; }
     `;
@@ -79,4 +79,94 @@ export function restorePage(state) {
   if (document.body) document.body.style.overflow = state.bodyOverflow;
   window.scrollTo(state.scrollX, state.scrollY);
   doc.style.scrollBehavior = state.htmlScrollBehavior;
+}
+
+// The overlay lives on <html>, outside <body>, so the fixed-element sweep in
+// scrollTo never touches it and the animation freeze never stops its spinner.
+export function mountOverlay() {
+  const HOST_ID = "__fps_overlay__";
+  if (document.getElementById(HOST_ID)) return;
+
+  const host = document.createElement("div");
+  host.id = HOST_ID;
+  host.style.cssText = "all: initial; display: block; position: fixed; inset: 0; z-index: 2147483647; pointer-events: none;";
+  const root = host.attachShadow({ mode: "open" });
+  root.innerHTML = `
+    <style>
+      @keyframes fps-spin { to { transform: rotate(360deg); } }
+      @keyframes fps-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+      .card {
+        position: fixed;
+        top: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 18px 12px 14px;
+        border-radius: 999px;
+        background: rgba(17, 18, 22, 0.92);
+        color: #fff;
+        font: 500 14px/1.2 system-ui, -apple-system, "Segoe UI", sans-serif;
+        box-shadow: 0 10px 34px rgba(0, 0, 0, 0.35);
+        animation: fps-in 180ms ease-out;
+      }
+      .ring {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        border: 2.5px solid rgba(255, 255, 255, 0.25);
+        border-top-color: #60a5fa;
+        animation: fps-spin 700ms linear infinite;
+      }
+      .ring.done {
+        border-color: #22c55e;
+        animation: none;
+      }
+      .text { white-space: nowrap; }
+      .pct { color: #93c5fd; font-variant-numeric: tabular-nums; }
+      .bar {
+        position: absolute;
+        left: 14px;
+        right: 14px;
+        bottom: 6px;
+        height: 3px;
+        border-radius: 2px;
+        background: rgba(255, 255, 255, 0.18);
+        overflow: hidden;
+      }
+      .fill { height: 100%; width: 0%; background: #60a5fa; border-radius: 2px; }
+    </style>
+    <div class="card">
+      <div class="ring" part="ring"></div>
+      <div class="text"><span class="msg">Capturing full page…</span> <span class="pct">0%</span></div>
+      <div class="bar"><div class="fill"></div></div>
+    </div>
+  `;
+  document.documentElement.appendChild(host);
+}
+
+export function updateOverlay(state) {
+  const host = document.getElementById("__fps_overlay__");
+  if (!host || !host.shadowRoot) return;
+  const root = host.shadowRoot;
+
+  if (typeof state.visible === "boolean") {
+    host.style.display = state.visible ? "block" : "none";
+  }
+  if (typeof state.percent === "number") {
+    root.querySelector(".pct").textContent = `${state.percent}%`;
+    root.querySelector(".fill").style.width = `${state.percent}%`;
+  }
+  if (state.label) {
+    root.querySelector(".msg").textContent = state.label;
+  }
+  if (state.done) {
+    root.querySelector(".ring").classList.add("done");
+  }
+}
+
+export function unmountOverlay() {
+  const host = document.getElementById("__fps_overlay__");
+  if (host) host.remove();
 }

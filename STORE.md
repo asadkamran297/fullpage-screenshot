@@ -17,7 +17,7 @@ WHAT IT DOES
 • Hides sticky headers and floating banners after the first section, so they don't repeat down the image
 • Pauses animations and transitions while capturing for clean, seamless joins
 • Restores your original scroll position when it finishes
-• Shows capture progress on the toolbar badge
+• Shows live progress on the page itself and on the toolbar badge, so you always know it is working
 
 PRIVACY
 Everything happens locally in your browser. There are no servers, no accounts, no analytics, and no network requests of any kind. Your screenshots never leave your device. The extension requests no host permissions — it can only read a page after you click its icon on that page.
