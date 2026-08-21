@@ -4,6 +4,8 @@ A Chrome extension (Manifest V3) that captures the **entire scrollable page** â€
 
 ![icon](icons/icon128.png)
 
+The icon is a camera with a down arrow in the lens â€” camera for screenshot, arrow for the full length of the page. Regenerate the PNG set with `python scripts/make-icons.py` (needs Pillow).
+
 ## Features
 
 - One click (or `Alt+Shift+S`) captures the full page height and width
