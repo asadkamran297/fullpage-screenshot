@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Screenshot</title>
+    <link rel="stylesheet" href="viewer.css" />
+  </head>
+  <body>
+    <header class="bar">
+      <div class="meta">
+        <strong id="title">Screenshot</strong>
+        <span id="subtitle"></span>
+      </div>
+      <div class="actions">
+        <button id="copy" type="button">Copy</button>
+        <button id="download" type="button" class="primary">Download PNG</button>
+      </div>
+    </header>
+    <main id="stage">
+      <p id="status">Loading screenshot…</p>
+      <img id="shot" alt="Full page screenshot" hidden />
+    </main>
+    <script src="viewer.js" type="module"></script>
+  </body>
+</html>

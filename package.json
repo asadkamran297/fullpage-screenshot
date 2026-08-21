@@ -1,0 +1,14 @@
+{
+  "name": "fullpage-screenshot",
+  "version": "1.0.0",
+  "description": "Chrome extension that captures the entire scrollable page as one PNG and opens it in a new tab.",
+  "private": true,
+  "scripts": {
+    "zip": "node scripts/zip.mjs"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/asadkamran297/fullpage-screenshot.git"
+  }
+}
