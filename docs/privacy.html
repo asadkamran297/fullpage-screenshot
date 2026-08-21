@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Full Page Screenshot</title>
+<meta name="description" content="Full Page Screenshot collects no data, makes no network requests, and never uploads your screenshots. The full privacy policy for the Chrome extension.">
+<link rel="canonical" href="https://asadkamran297.github.io/fullpage-screenshot/privacy.html">
+<link rel="icon" href="icon128.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <img src="icon128.png" alt="">
+    <span class="name">Full Page Screenshot</span>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="https://github.com/asadkamran297/fullpage-screenshot">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <h1>Privacy Policy</h1>
+  <p class="lede">Last updated: 21 August 2026</p>
+
+  <div class="panel">
+    <p style="margin:0"><strong>Full Page Screenshot does not collect, transmit, sell, or share any user data.</strong> It makes no network requests of any kind.</p>
+  </div>
+
+  <h2>What the extension accesses</h2>
+  <p>When you click the extension's toolbar icon, it reads the content of that one tab in order to measure the page, scroll it, and capture its pixels. This happens only on the tab you clicked, only at the moment you click, and only for as long as the capture takes.</p>
+
+  <h2>What is stored</h2>
+  <p>The finished image is written to <code>chrome.storage.local</code> purely to hand it to the viewer tab that opens immediately afterwards. The viewer deletes it from storage as soon as it loads the image. Your auto-copy preference is also stored locally. Nothing else is stored, and nothing is stored outside your own browser.</p>
+
+  <h2>What is transmitted</h2>
+  <p>Nothing. The extension contains no analytics, no tracking, no telemetry and no remote code. Screenshots never leave your device unless you choose to download or copy them yourself.</p>
+
+  <h2>Permissions and why each one exists</h2>
+  <ul class="plain">
+    <li><code>activeTab</code> — read the current tab's pixels after you click the icon</li>
+    <li><code>scripting</code> — inject the measuring and scrolling helpers into that tab</li>
+    <li><code>storage</code> / <code>unlimitedStorage</code> — temporarily hold the screenshot for the viewer tab and remember the auto-copy setting</li>
+    <li><code>clipboardWrite</code> — place the finished screenshot on your clipboard</li>
+  </ul>
+  <p>The extension requests <strong>no host permissions</strong>. It cannot read any website until you click its icon on that specific page.</p>
+
+  <h2>Children</h2>
+  <p>The extension collects no data from anyone, including children under 13.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If the policy ever changes, the updated version will be published on this page with a new date, and the change will be recorded in the extension's release notes on GitHub.</p>
+
+  <h2>Contact</h2>
+  <p>Open an issue at <a href="https://github.com/asadkamran297/fullpage-screenshot/issues">github.com/asadkamran297/fullpage-screenshot/issues</a>.</p>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    Full Page Screenshot — MIT licensed, built by <a href="https://github.com/asadkamran297">Asad Kamran</a>.
+    <a href="index.html">Home</a> ·
+    <a href="https://github.com/asadkamran297/fullpage-screenshot">Source</a>
+  </div>
+</footer>
+
+</body>
+</html>

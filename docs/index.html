@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Full Page Screenshot — free Chrome extension, no account, no uploads</title>
+<meta name="description" content="Capture a full page screenshot in one click. The whole scrolling page, saved as PNG, JPG, WebP or PDF. Free, open source, no account, and zero network requests.">
+<link rel="canonical" href="https://asadkamran297.github.io/fullpage-screenshot/">
+<link rel="icon" href="icon128.png">
+<link rel="stylesheet" href="style.css">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Full Page Screenshot — free Chrome extension">
+<meta property="og:description" content="Capture the whole scrolling page in one click. PNG, JPG, WebP or PDF. No account, no uploads, nothing leaves your computer.">
+<meta property="og:url" content="https://asadkamran297.github.io/fullpage-screenshot/">
+<meta property="og:image" content="https://asadkamran297.github.io/fullpage-screenshot/icon128.png">
+<meta name="twitter:card" content="summary">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Full Page Screenshot",
+  "description": "Chrome extension that captures the entire scrolling page in one click and saves it as PNG, JPG, JPEG, WebP, lossless WebP or a multi-page PDF. No account, no cloud upload, and zero network requests.",
+  "applicationCategory": "BrowserApplication",
+  "applicationSubCategory": "Productivity",
+  "operatingSystem": "Chrome",
+  "browserRequirements": "Requires Google Chrome or another Chromium-based browser",
+  "softwareVersion": "1.3.0",
+  "license": "https://opensource.org/licenses/MIT",
+  "isAccessibleForFree": true,
+  "url": "https://asadkamran297.github.io/fullpage-screenshot/",
+  "downloadUrl": "https://github.com/asadkamran297/fullpage-screenshot",
+  "codeRepository": "https://github.com/asadkamran297/fullpage-screenshot",
+  "privacyPolicy": "https://asadkamran297.github.io/fullpage-screenshot/privacy.html",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": [
+    "Captures the full scrolling height and width of any page",
+    "Exports PNG, JPG, JPEG, WebP, lossless WebP and multi-page PDF",
+    "Copies every capture to the clipboard automatically",
+    "Renders at the display's real pixel density for sharp text on HiDPI screens",
+    "Hides repeated sticky headers and cookie banners after the first section",
+    "Makes zero network requests and requests no host permissions"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does it capture the whole scrolling page?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Full Page Screenshot scrolls the entire page and stitches every section into a single image — the full height, not just the visible viewport."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I save a webpage as a PDF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Right-click the captured image and choose PDF. Long pages are split across A4 pages automatically, and the PDF is generated inside the browser."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Full Page Screenshot free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Completely. Every format and every feature is free. There is no paid tier, no watermark and no upsell."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need an account to use it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. There is no sign-up, no login and no cloud service of any kind."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are my screenshots uploaded anywhere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Never. The extension makes zero network requests. Every capture happens inside your browser and the image never leaves your computer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work offline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Nothing about the capture needs an internet connection."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why can't it capture some pages?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Chrome blocks all extensions on browser-internal pages — chrome:// URLs, the Chrome Web Store and the extensions page. That is a browser rule, not a limitation of this extension."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What permissions does it request?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "activeTab to read the pixels of the tab you clicked the icon on, scripting to inject the helper that measures and scrolls the page, storage to hand the finished image to the viewer tab, and clipboardWrite to copy the screenshot. It requests no host permissions, so it cannot read any site until you click its icon there."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Full Page Screenshot open source?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. It is MIT licensed and the full source is on GitHub at github.com/asadkamran297/fullpage-screenshot."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <img src="icon128.png" alt="">
+    <span class="name">Full Page Screenshot</span>
+    <nav>
+      <a href="#faq">FAQ</a>
+      <a href="#compare">Compare</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="https://github.com/asadkamran297/fullpage-screenshot">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <h1>Capture a full page screenshot in one click</h1>
+  <p class="lede">The entire scrolling page, top to bottom — not just what fits on your screen. Saved as PNG, JPG, WebP or PDF, and copied to your clipboard automatically. Free, open source, and nothing ever leaves your computer.</p>
+
+  <div class="cta-row">
+    <!-- TODO: swap for the Chrome Web Store URL once the listing is live. -->
+    <a class="cta" href="https://github.com/asadkamran297/fullpage-screenshot">Get the extension</a>
+    <span class="cta-note">Free · MIT licensed · no account</span>
+  </div>
+
+  <h2>What it does</h2>
+  <ul class="plain">
+    <li><strong>One click, whole page.</strong> Click the toolbar icon or press <code>Alt+Shift+S</code>. The extension scrolls the page for you, captures every section, and stitches them into one sharp image.</li>
+    <li><strong>Six export formats, none paywalled.</strong> Right-click the result and save as PNG, JPG, JPEG, WebP, lossless WebP, or a multi-page PDF. No watermark, no pro tier.</li>
+    <li><strong>Copied to your clipboard automatically.</strong> Every capture lands on your clipboard the moment it is ready — paste it straight into Slack, Docs, Gmail or a bug report.</li>
+    <li><strong>Completely private.</strong> Zero network requests and no host permissions. There is no server to upload to.</li>
+    <li><strong>Sharp on HiDPI screens.</strong> Captures at your display's real pixel density, so text stays crisp on Retina and 4K displays.</li>
+    <li><strong>No repeated headers.</strong> Sticky navigation bars and floating cookie banners are hidden after the first section, so they appear once instead of marching down the image.</li>
+    <li><strong>Open source.</strong> MIT licensed, source on GitHub. Read exactly what it does before you trust it with your screen.</li>
+  </ul>
+
+  <h2>How to use it</h2>
+  <ol>
+    <li>Open any page you want to capture.</li>
+    <li>Click the Full Page Screenshot icon, or press <code>Alt+Shift+S</code>.</li>
+    <li>Watch the progress indicator while the page scrolls and captures.</li>
+    <li>The screenshot opens in a new tab and is already on your clipboard.</li>
+    <li>Right-click the image to save it as PNG, JPG, WebP or PDF.</li>
+  </ol>
+
+  <h2 id="privacy-claim">Your screenshots never leave your computer</h2>
+  <div class="panel">
+    <p>Full Page Screenshot makes <strong>zero network requests</strong>. There is no account, no sign-up, no analytics, no telemetry and no cloud storage. The capture is assembled in your browser and handed to a local tab. It requests <strong>no host permissions</strong>, which means it cannot read any page until you click its icon on that page.</p>
+    <p style="margin-bottom:0">Full detail in the <a href="privacy.html">privacy policy</a>, and the claim is checkable — the <a href="https://github.com/asadkamran297/fullpage-screenshot">source is public</a>.</p>
+  </div>
+
+  <h2 id="compare">How it compares</h2>
+  <p>An honest comparison of the main full page screenshot extensions for Chrome, including where this one falls short.</p>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Full Page Screenshot</th>
+          <th>GoFullPage</th>
+          <th>Awesome Screenshot</th>
+          <th>FireShot</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Full scrolling page capture</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+        <tr><td>Price for all export formats</td><td>Free</td><td>Free core, $1/mo premium</td><td>Free tier, paid plans</td><td>PDF/editor behind a paid licence</td></tr>
+        <tr><td>PDF export</td><td>Yes, multi-page, free</td><td>Premium</td><td>Yes</td><td>Paid</td></tr>
+        <tr><td>Account required</td><td>No</td><td>No</td><td>Pushes sign-up</td><td>No</td></tr>
+        <tr><td>Network requests</td><td>None</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+        <tr><td>Auto-copy to clipboard</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
+        <tr><td>Open source</td><td>Yes, MIT</td><td>No</td><td>No</td><td>No</td></tr>
+        <tr><td>Annotation and editing</td><td><strong>No</strong></td><td>Limited</td><td>Yes</td><td>Yes</td></tr>
+        <tr><td>Inner scrollers and iframes</td><td><strong>Not yet</strong></td><td>Yes</td><td>Partly</td><td>Yes</td></tr>
+        <tr><td>Region or delayed capture</td><td><strong>Not yet</strong></td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Short version: if you want annotation tools, cloud sharing or capture of a scrollable panel inside a page, one of the others is the better fit today. If you want the whole page captured, exported in any format, and guaranteed never to be uploaded anywhere, this one is built for exactly that. See also the <a href="gofullpage-alternative.html">GoFullPage alternative</a> write-up.</p>
+
+  <h2 id="faq">Frequently asked questions</h2>
+  <div class="faq">
+
+    <h3>Does it capture the whole scrolling page?</h3>
+    <p>Yes. Full Page Screenshot scrolls the entire page and stitches every section into a single image — the full height, not just the visible viewport.</p>
+
+    <h3>Can I save a webpage as a PDF?</h3>
+    <p>Yes. Right-click the captured image and choose PDF. Long pages are split across A4 pages automatically, and the PDF is generated inside the browser.</p>
+
+    <h3>Is Full Page Screenshot free?</h3>
+    <p>Completely. Every format and every feature is free. There is no paid tier, no watermark and no upsell.</p>
+
+    <h3>Do I need an account to use it?</h3>
+    <p>No. There is no sign-up, no login and no cloud service of any kind.</p>
+
+    <h3>Are my screenshots uploaded anywhere?</h3>
+    <p>Never. The extension makes zero network requests. Every capture happens inside your browser and the image never leaves your computer.</p>
+
+    <h3>Does it work offline?</h3>
+    <p>Yes. Nothing about the capture needs an internet connection.</p>
+
+    <h3>Why can't it capture some pages?</h3>
+    <p>Chrome blocks all extensions on browser-internal pages — <code>chrome://</code> URLs, the Chrome Web Store and the extensions page. That is a browser rule, not a limitation of this extension.</p>
+
+    <h3>What permissions does it request?</h3>
+    <p><code>activeTab</code> to read the pixels of the tab you clicked the icon on, <code>scripting</code> to inject the helper that measures and scrolls the page, <code>storage</code> to hand the finished image to the viewer tab, and <code>clipboardWrite</code> to copy the screenshot. It requests no host permissions, so it cannot read any site until you click its icon there.</p>
+
+    <h3>Is Full Page Screenshot open source?</h3>
+    <p>Yes. It is MIT licensed and the full source is on <a href="https://github.com/asadkamran297/fullpage-screenshot">GitHub</a>.</p>
+
+    <h3>What are its limitations?</h3>
+    <p>It has no annotation or editing tools, it cannot yet capture a scrollable panel inside a page or content inside an iframe, and it has no region or delayed capture. Very tall pages take a few seconds because Chrome limits how often a tab can be captured, and content that only loads on scroll can occasionally come out blank.</p>
+
+  </div>
+
+  <h2>Install</h2>
+  <div class="cta-row">
+    <!-- TODO: swap for the Chrome Web Store URL once the listing is live. -->
+    <a class="cta" href="https://github.com/asadkamran297/fullpage-screenshot">Get the extension</a>
+    <span class="cta-note">Works in Chrome, Edge, Brave and other Chromium browsers</span>
+  </div>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    Full Page Screenshot — MIT licensed, built by <a href="https://github.com/asadkamran297">Asad Kamran</a>.
+    <a href="privacy.html">Privacy</a> ·
+    <a href="https://github.com/asadkamran297/fullpage-screenshot/issues">Report an issue</a>
+  </div>
+</footer>
+
+</body>
+</html>

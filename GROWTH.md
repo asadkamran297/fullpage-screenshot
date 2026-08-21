@@ -335,12 +335,12 @@ Item 5 first. It is a handful of lines and it eliminates a whole class of "half 
 ### Week 1 — ship
 - [ ] Test in a real browser end to end (see CHECKLIST.md)
 - [ ] Produce the five annotated screenshots and the 440×280 tile
-- [ ] Publish the GitHub Pages site with the FAQ and JSON-LD; use it as the privacy-policy URL
+- [x] Publish the GitHub Pages site with the FAQ and JSON-LD; use it as the privacy-policy URL — written in `docs/`, still needs Pages switched on in repo settings
 - [ ] Pay the $5 registration and submit
 - [ ] Set repo description and topics
 
 ### Weeks 2–4 — the window
-- [ ] Publish the honest "GoFullPage alternative" page on the site
+- [x] Publish the honest "GoFullPage alternative" page on the site — `docs/gofullpage-alternative.html`
 - [ ] Post to Reddit and Show HN, disclosed, once each, in the right places
 - [ ] Submit to AlternativeTo and Product Hunt
 - [ ] Email all six listicle sites

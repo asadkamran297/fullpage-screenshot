@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://asadkamran297.github.io/fullpage-screenshot/sitemap.xml

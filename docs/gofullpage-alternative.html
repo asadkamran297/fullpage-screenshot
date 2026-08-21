@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GoFullPage alternative — what happened, and what to use instead</title>
+<meta name="description" content="GoFullPage was pulled from the Chrome Web Store in August 2026 over a copyright dispute. Here is what happened, an honest comparison of the alternatives, and where each one fits.">
+<link rel="canonical" href="https://asadkamran297.github.io/fullpage-screenshot/gofullpage-alternative.html">
+<link rel="icon" href="icon128.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <img src="icon128.png" alt="">
+    <span class="name">Full Page Screenshot</span>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="https://github.com/asadkamran297/fullpage-screenshot">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <h1>GoFullPage alternative: what happened, and what to use instead</h1>
+  <p class="lede">Written by the developer of Full Page Screenshot, one of the alternatives listed below. The comparison is deliberately honest about where this extension is the weaker choice.</p>
+
+  <h2>What happened to GoFullPage</h2>
+  <p>Around 10–11 August 2026, GoFullPage — the roughly 11-million-user extension that had been the default answer to "full page screenshot" for years — was removed from the Chrome Web Store. According to <a href="https://blog.gofullpage.com/2026/08/11/gofullpage-chrome-update/">the developer's own statement</a>, this is a copyright dispute over a 34-pixel animated GIF, not a security problem, and they are working with Google to get the listing restored.</p>
+  <p>The removal also tripped Chrome's automated safety machinery, so many users saw the browser flag the extension as unsafe and disable it. That is why a working install suddenly stopped working.</p>
+
+  <h3>Is GoFullPage unsafe?</h3>
+  <p>There is no public evidence of a security issue. The "unsafe" warning is what Chrome shows for any extension removed from the store, whatever the reason for removal.</p>
+
+  <h3>Will it come back?</h3>
+  <p>Probably. The dispute is over content, not code, and the developer says they are working with Google on it. If you can wait, waiting is a reasonable choice.</p>
+
+  <h3>Can I keep using my existing install?</h3>
+  <p>If Chrome has disabled it, you can re-enable a disabled extension from <code>chrome://extensions</code>, but Chrome will keep warning you and it will not receive updates while it is delisted. That is a decision to make with your eyes open, not a recommendation.</p>
+
+  <h2>The alternatives, compared honestly</h2>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr>
+          <th>Extension</th>
+          <th>Best for</th>
+          <th>Cost</th>
+          <th>Trade-off</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Full Page Screenshot</strong> (this one)</td>
+          <td>The closest match to plain GoFullPage behaviour: one click, whole page, save it. Plus free PDF and automatic clipboard copy.</td>
+          <td>Free, everything</td>
+          <td>No annotation, no region capture, and it cannot yet capture scrollable panels inside a page or iframes.</td>
+        </tr>
+        <tr>
+          <td><strong>Awesome Screenshot</strong></td>
+          <td>Teams that also want screen recording and issue-tracker integrations.</td>
+          <td>Free tier, paid plans</td>
+          <td>Heavier, pushes account sign-up, and asks for broad permissions.</td>
+        </tr>
+        <tr>
+          <td><strong>FireShot</strong></td>
+          <td>Power users who want batch capture and detailed export control.</td>
+          <td>Free core, ~$40 lifetime Pro</td>
+          <td>Dated interface; the editor and much of the PDF handling sit behind the licence.</td>
+        </tr>
+        <tr>
+          <td><strong>Nimbus, Scrnli and similar</strong></td>
+          <td>Annotation and cloud sharing built in.</td>
+          <td>Free tier, paid plans</td>
+          <td>Account required and captures are uploaded to their cloud.</td>
+        </tr>
+        <tr>
+          <td><strong>Chrome's built-in capture</strong></td>
+          <td>No install at all.</td>
+          <td>Free</td>
+          <td>Buried in DevTools: open DevTools, Ctrl+Shift+P, "Capture full size screenshot". Fails on many complex pages.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Where Full Page Screenshot fits</h2>
+  <p>If what you used GoFullPage for was "click the button, get the whole page, save or paste it", this extension does that same job and adds two things GoFullPage charges for or does not do: <strong>multi-page PDF export at no cost</strong>, and <strong>automatic clipboard copy</strong> of every capture.</p>
+  <p>It is also <strong>open source under the MIT licence</strong> and makes <strong>zero network requests</strong>, with no host permissions requested. If the delisting made you think harder about what your extensions can see, that is the part worth checking — the <a href="https://github.com/asadkamran297/fullpage-screenshot">source is public</a>, so the claim is verifiable rather than something you have to take on trust.</p>
+  <p><strong>Where it is not the right pick:</strong> if you relied on GoFullPage for capturing a scrollable panel inside a page (Gmail threads, Notion, embedded documents), for annotating captures, or for region and delayed capture, this extension does not do those yet. Awesome Screenshot or FireShot will serve you better today.</p>
+
+  <div class="cta-row" style="margin-top:26px">
+    <!-- TODO: swap for the Chrome Web Store URL once the listing is live. -->
+    <a class="cta" href="https://github.com/asadkamran297/fullpage-screenshot">Get Full Page Screenshot</a>
+    <span class="cta-note">Free · MIT licensed · no account, no uploads</span>
+  </div>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    Full Page Screenshot — MIT licensed, built by <a href="https://github.com/asadkamran297">Asad Kamran</a>.
+    <a href="index.html">Home</a> ·
+    <a href="privacy.html">Privacy</a>
+  </div>
+</footer>
+
+</body>
+</html>
