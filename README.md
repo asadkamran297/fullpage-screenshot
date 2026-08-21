@@ -63,7 +63,7 @@ There is no `host_permissions` entry — the extension has zero access to any pa
 npm run zip     # produces dist/fullpage-screenshot-<version>.zip
 ```
 
-Upload the zip in the [Chrome Web Store Developer Dashboard](https://chrome.google.com/webstore/devconsole). See [STORE.md](STORE.md) for the listing copy, [PRIVACY.md](PRIVACY.md) for the privacy policy, and [CHECKLIST.md](CHECKLIST.md) for everything still outstanding before submission.
+Upload the zip in the [Chrome Web Store Developer Dashboard](https://chrome.google.com/webstore/devconsole). See [STORE.md](STORE.md) for the listing copy, [PRIVACY.md](PRIVACY.md) for the privacy policy, and [CHECKLIST.md](CHECKLIST.md) for everything still outstanding before submission, and [GROWTH.md](GROWTH.md) for the listing copy, keyword map and launch plan.
 
 ## License
 

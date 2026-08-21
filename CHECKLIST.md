@@ -19,6 +19,8 @@ Version **1.3.0** — code complete, not yet verified in a real browser.
 
 Name, short description, full description and the privacy-practices answers are all written out in [STORE.md](STORE.md) — copy them straight into the dashboard fields.
 
+[GROWTH.md](GROWTH.md) holds the researched version: keyword map, optimised listing copy, the five screenshots to shoot, and the launch plan.
+
 ## Known gaps to revisit after launch
 
 - Lazy-loaded content that never renders during the scroll pass can appear blank.
