@@ -6,6 +6,7 @@ import {
   updateOverlay,
   unmountOverlay
 } from "./page-scripts.js";
+import { dataUrlToBlob } from "./data-url.js";
 
 // captureVisibleTab is throttled by Chrome (MAX_CAPTURE_VISIBLE_TAB_CALLS_PER_SECOND).
 const CAPTURE_INTERVAL_MS = 550;
@@ -109,7 +110,7 @@ async function stitch(shots, m) {
   );
   const ctx = canvas.getContext("2d");
   for (const shot of shots) {
-    const bitmap = await createImageBitmap(await (await fetch(shot.dataUrl)).blob());
+    const bitmap = await createImageBitmap(dataUrlToBlob(shot.dataUrl));
     ctx.drawImage(bitmap, Math.round(shot.x * scale), Math.round(shot.y * scale));
     bitmap.close();
   }

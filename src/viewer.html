@@ -16,10 +16,16 @@
         <button id="download" type="button" class="primary">Download PNG</button>
       </div>
     </header>
+
     <main id="stage">
       <p id="status">Loading screenshot…</p>
       <img id="shot" alt="Full page screenshot" hidden />
+      <p id="hint" hidden>Right-click the image to save it as PNG, JPG, WebP, PDF and more.</p>
     </main>
+
+    <div id="menu" class="menu" role="menu" hidden></div>
+    <div id="toast" class="toast" hidden></div>
+
     <script src="viewer.js" type="module"></script>
   </body>
 </html>

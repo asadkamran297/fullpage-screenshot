@@ -14,6 +14,8 @@ The icon is a camera with a down arrow in the lens — camera for screenshot, ar
 - Freezes animations and transitions during capture for clean seams
 - On-page progress overlay with a spinner, percentage and progress bar, hidden for the instant each tile is photographed so it never lands in the image
 - Result opens in a new tab with **Copy to clipboard** and **Download PNG**
+- Right-click the image for a menu that saves it as **PNG, JPG, JPEG, WebP, WebP lossless or PDF**, copies the image or its data URL, opens it in a new tab, or prints it (hold Shift to get Chrome's own menu)
+- Multi-page PDF export written from scratch — no third-party library, so it passes the Web Store's no-remote-code rule
 - Restores your original scroll position when it's done
 - No servers, no analytics, no network requests — everything stays on your machine
 

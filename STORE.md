@@ -16,6 +16,7 @@ WHAT IT DOES
 • Renders at your display's pixel density, so text stays crisp on HiDPI screens
 • Hides sticky headers and floating banners after the first section, so they don't repeat down the image
 • Pauses animations and transitions while capturing for clean, seamless joins
+• Right-click the result to save it as PNG, JPG, JPEG, WebP or a multi-page PDF, copy it, or print it
 • Restores your original scroll position when it finishes
 • Shows live progress on the page itself and on the toolbar badge, so you always know it is working
 
